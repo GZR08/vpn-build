@@ -36,7 +36,7 @@ cat>/etc/shadowsocks.json<<EOF
 EOF
 # 安装 shadowsocks 防火墙等
 ret=`yum install -y m2crypto python-setuptools >> ${log_path} 2>&1`
-ret=`easy_install pip >> ${log_path} 2>&1`
+ret=`yum -y install python-pip >> ${log_path} 2>&1`
 ret=`pip install shadowsocks >> ${log_path} 2>&1`
 ret=`yum install -y firewalld >> ${log_path} 2>&1`
 ret=`systemctl start firewalld >> ${log_path} 2>&1`
